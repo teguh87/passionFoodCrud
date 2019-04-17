@@ -96,10 +96,8 @@ footer {
 }
 
 .page-body-wrapper {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
+    display: block;
+    box-sizing: border-box;
     padding-left: 0;
     padding-right: 0;
     padding-top: 70px;
@@ -163,7 +161,7 @@ footer {
 }
 
 .content-list-product{
-  width: 800px;
+  width: 900px;
   padding: 20px;
   margin-bottom: 0;
   font-size: inherit;

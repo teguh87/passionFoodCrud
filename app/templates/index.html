@@ -17,6 +17,8 @@
                       <th>Item</th>
                       <th>Qty</th>
                       <th>Price</th>
+                      <th>Created Date</th>
+                      <th>Updated Date</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -27,7 +29,12 @@
                       <td>{{item.item}}</td>
                       <td>{{item.qty}}</td>
                       <td>{{item.price}}</td>
-                      <td><a href="{{'show/%s' %item.id}}" class="btn btn-primary">View</a></td>
+                      <td>{{item.created_at.strftime('%Y-%m-%d %H:%M:%S')}}</td>
+                      <td>{{item.updated_at.strftime('%Y-%m-%d %H:%M:%S')}}</td>
+                      <td>
+                        <a href="{{'show/%s' %item.id}}" class="btn btn-primary">View</a>
+                        <a href="{{'delete/%s' %item.id}}" class="btn btn-primary">Delete</a>
+                      </td>
                     </tr>
                     {% endfor %}
                   </tbody>

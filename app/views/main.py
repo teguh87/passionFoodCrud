@@ -1,11 +1,8 @@
 from flask import render_template, redirect, url_for, request
-import json
 from app import app
 
 from app.forms import product
 from app.models import Product
-
-
 
 @app.route('/')
 @app.route('/index')
@@ -23,9 +20,10 @@ def add_product():
         newProd.item = form.item.data
         newProd.price = form.price.data 
         newProd.qty = form.qty.data 
-
+        
         # db transaction
         newProd.save()
+        app.logger.debug('record has been saved')
         return redirect(url_for('index'))
         
     return render_template('form.html', form=form, title="Add Product")
@@ -36,7 +34,6 @@ def show_product(product_id):
     form = product.ProductForm()
     title = 'Show product %s'%(showProd.item)
     return render_template('show.html', title=title, form=form, item=showProd)
-
 
 @app.route('/update/<int:prod_id>', methods=['GET', 'POST'])
 def update_product(prod_id):
@@ -49,4 +46,14 @@ def update_product(prod_id):
             getProd.price = form.price.data
             getProd.qty = form.qty.data
             getProd.update()
-    return redirect(url_for('index'))
+            app.logger.debug('record has been deleted')
+            return redirect(url_for('index'))
+    if 'cancel' in request.POST.items(): 
+        return redirect(url_for('index'))
+    
+@app.route('/delete/<int:prod_id>')
+def delete_product(prod_id):
+    getProd = Product.get(prod_id)
+    if getProd:
+        getProd.delete()
+        return redirect(url_for('index'))  
