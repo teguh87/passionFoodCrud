@@ -1,0 +1,22 @@
+version: "3"
+services:
+  nginx:
+    restart: always
+    image: nginx
+    volumes:
+      - ./nginx/conf.d/:/etc/nginx/conf.d
+    links:
+      - web:web
+    ports:
+    - 80:80
+
+  web:
+    restart: always
+    build:
+      context: ./app
+    volumes:
+      - ./app/:/app
+    expose:
+      - "8000"
+    command: /usr/local/bin/gunicorn -w 2 -b :8000 app:app
+    

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {% block head %}
+            <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
+			<meta charset="UTF-8">
+            <title>{% block title %}{% endblock %}</title>
+            {{ bootstrap.load_css() }}
+            <!-- vendor assets -->
+            <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css"/>
+            <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+            <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+            <!-- Custom CSS -->
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container-scroller">
+            <nav class="navbar bg-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+                <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                </div>
+                <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+
+                </div>
+            </nav>
+            <div class="container-fluid page-body-wrapper">
+                <div class="content">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+            <footer class="text-center">
+                {% block footer %}
+                     <small> &copy; 2019 
+                        <a href="http://pasionFood.com" title="Written by Teguh Santoso">Teguh Santoso</a>
+                    </small>
+                {% endblock %}
+            </footer>
+        </div>
+    </body>
+</html>

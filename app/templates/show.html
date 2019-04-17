@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %} 
+    <div class="content-form-product center raised very padded text segment">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="title">{{title}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <form class="form" action="{{'/update/%s'%item.id}}" method="post">
+                            {{ form.csrf_token }}
+                            <div class="form-group row">
+                                {{ form.item.label(class_='col-sm-2 col-form-label')}}
+                                <div class="col-sm-10">
+                                    {{ form.item(size=20, class_='form-control', value=item.item)}}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                {{ form.qty.label(class_='col-sm-2 col-form-label')}}
+                                <div class="col-sm-6">
+                                    {{ form.qty(size=6, class_='form-control', value=item.qty)}}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                {{ form.price.label(class_='col-sm-2 col-form-label')}}
+                                <div class="col-sm-6">
+                                    {{ form.price(size=6, class_='form-control', value=item.price)}}
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

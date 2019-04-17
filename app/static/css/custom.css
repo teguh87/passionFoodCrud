@@ -1,0 +1,171 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600);
+*/
+/* ========================================= */
+/* 		   		General Styling	 			 */
+/* ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  background: transparent;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*:focus {
+  outline: 0; }
+
+html {
+  -webkit-font-smoothing: antialiased; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+ol, ul {
+  list-style: none; }
+
+:focus {
+  outline: 0; }
+
+.clear {
+  clear: both;
+  line-height: 0;
+  font-size: 0; }
+
+.clearfix:after {
+  clear: both;
+  content: '.';
+  display: block;
+  visibility: hidden;
+  height: 0; }
+  .clearfix:after .test {
+    color: red; }
+
+.clearfix {
+  display: inline-block; }
+
+* html .clearfix {
+  height: 1%; }
+
+body {
+    margin:0;
+    padding:0;
+    height:100%;
+    overflow-x: hidden;
+    font-size: 0.875rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: initial;
+    line-height: normal;
+    -webkit-font-smoothing: antialiased;
+}
+.clearfix {
+  display: block; }
+
+header,
+nav,
+section,
+article,
+aside,
+footer {
+  display: block; }
+
+
+.navbar{
+    height: 60px;
+    box-shadow: 0 2px 15px 0 rgba(0,0,0,.05);
+    z-index: 999;
+}
+
+.bg-light {
+    background: #fff!important;
+}
+
+
+.container-scroller{
+    background: #ecf0f1;
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-body-wrapper {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 70px;
+}
+
+.page-body-wrapper .content {
+    transition: width 0.25s ease, margin 0.25s ease;
+    width: calc(100% - 234px);
+    min-height: calc(95vh - 70px);
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px auto;
+}
+
+.content-form-product{
+  padding: 10px;
+  display: block;
+  width: 800px;
+}
+
+.card {
+  border-radius: 0 !important;
+  box-shadow: 0 2px 5px 0 #dce1eb;
+}
+
+.card-header {
+  background-color: #fff;
+}
+
+.title {
+  color: #482ece;
+  text-transform: capitalize;
+  font-size: 16px;
+}
+
+.form-group label {
+  font-size:.872rem;
+  line-height: 1.4rem;
+  vertical-align: top;
+  margin-bottom: .5rem;
+  text-transform: capitalize;
+}
+
+.col-form-label {
+  padding-top: calc(0.875rem + 1px);
+  padding-bottom: calc(0.875rem + 1px);
+  margin-bottom: 0;
+  font-size: inherit;
+  line-height: 1;
+}
+
+.form-control:focus{
+  outline: none;
+  outline-width: 0;
+  outline-color: transparent;
+  box-shadow: none;
+  outline-style: none
+}
+
+.content-list-product{
+  width: 800px;
+  padding: 20px;
+  margin-bottom: 0;
+  font-size: inherit;
+  line-height: 1;
+}

@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+  <div class="content-list-product center raised very padded text segment">
+    <div class="row">
+       <div class="col-md-12">
+           <div class="card">
+              <div class="card-header">
+                  <h4 class="title">List of Product</h4>
+              </div>
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Item</th>
+                      <th>Qty</th>
+                      <th>Price</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for item in data %}
+                    <tr>
+                      <td>{{item.id}} </td>
+                      <td>{{item.item}}</td>
+                      <td>{{item.qty}}</td>
+                      <td>{{item.price}}</td>
+                      <td><a href="{{'show/%s' %item.id}}" class="btn btn-primary">View</a></td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+                <a href="{{'/add'}}" class="btn btn-primary">Add</a>
+              </div>
+           </div>
+       </div> 
+    </div
+  </div>
+{% endblock %}
